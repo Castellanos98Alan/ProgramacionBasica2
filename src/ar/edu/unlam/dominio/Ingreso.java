@@ -5,11 +5,11 @@ import java.time.LocalDateTime;
 public class Ingreso implements Comparable<Ingreso> {
 
 	private static Integer proximoIDIngreso = 1;
-	private Vehiculo vehiculo;
 	private Integer id;
+	private Vehiculo vehiculo;
 	private LocalDateTime entrada;
-	private Double precioHoraBase;
 	private LocalDateTime salida;
+	private Double precioHoraBase;
 
 	public Ingreso(Vehiculo vehiculo, LocalDateTime entrada, Double precioHoraBase) {
 
@@ -27,10 +27,17 @@ public class Ingreso implements Comparable<Ingreso> {
 		this.id = id;
 	}
 
+	/**
+	 * Vuelve a asignar el id 1 al contador para usar en las pruebas
+	 */
+	public static void reiniciarproximoIDIngreso() {
+		proximoIDIngreso = 1;
+	}
+
 	@Override
-	public int compareTo(Ingreso o) {
-		 
-		return  0;
+	public int compareTo(Ingreso ingreso) {
+
+		return ingreso.getId().compareTo(this.id);
 	}
 
 	public Vehiculo getVehiculo() {
@@ -66,14 +73,10 @@ public class Ingreso implements Comparable<Ingreso> {
 	}
 
 	public LocalDateTime getSalida() {
-		// TODOa Auto-generated method stub
 		return this.salida;
 	}
 
 	public void setSalida(LocalDateTime salida) {
 		this.salida = salida;
 	}
-
-	
-	
 }
