@@ -1,5 +1,5 @@
 package ar.edu.unlam.dominio;
 
-public class ClaseDeTest {
+public class MontacargaTest {
 
 }
